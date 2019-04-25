@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/obiew")
+@CrossOrigin
 public class ObiewController {
     private ObiewRepository obiewRepository;
     private UserRepository userRepository;

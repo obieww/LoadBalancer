@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/user")
+@CrossOrigin
 public class UserController {
     private UserRepository userRepository;
 
@@ -18,7 +19,6 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    @CrossOrigin
     @PostMapping("/register")
     public ResponseEntity<User> register(@RequestBody User user) {
         if (userRepository.findByUsername(user.getUsername()) != null) {
