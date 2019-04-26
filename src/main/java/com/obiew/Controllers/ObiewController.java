@@ -36,6 +36,12 @@ public class ObiewController {
         return new ResponseEntity<>(feeds, HttpStatus.OK);
     }
 
+    @GetMapping("/randomfeed")
+    public ResponseEntity<List<Obiew>> getRandom() {
+        List<Obiew> obiewList = (List<Obiew>)obiewRepository.findAll();
+        return new ResponseEntity<>(obiewList, HttpStatus.OK);
+    }
+
     @GetMapping("/{obiewId}")
     public ResponseEntity<Obiew> getById(@PathVariable String obiewId) {
         Obiew obiew = obiewRepository.findByObiewId(obiewId);
